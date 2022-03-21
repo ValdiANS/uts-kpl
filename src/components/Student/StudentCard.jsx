@@ -65,8 +65,9 @@ const StudentCard = ({ studentData }) => {
         <select
           name="subject"
           id="selectedSubject"
-          className="font-medium"
+          className="font-medium text-ellipsis overflow-hidden"
           value={selectedSubject}
+          title={selectedSubject}
           onChange={subjectOnChangeHandler}
         >
           {subjects.map((subject, index) => (

@@ -2,17 +2,46 @@ import { faker } from '@faker-js/faker';
 
 import { Mahasiswa } from '../student/student';
 
+const subjectList = [
+  'Proyek Konsultansi',
+  'Sistem Operasi',
+  'Teknologi Basis Data',
+  'Pemrograman Berorientasi Objek',
+  'Pemrograman Web',
+  'Jaringan Komputer',
+  'Konstruksi Perangkat Lunak',
+  'Bisnis Teknologi Informasi',
+];
+
 const totalData = 3;
 const dummyStudentList = [];
 
 const createSubjectData = () => {
-  const nilaiTugas = faker.datatype.number({ max: 100, precision: 0.01 });
-  const nilaiQuiz = faker.datatype.number({ max: 100, precision: 0.01 });
-  const nilaiUTS = faker.datatype.number({ max: 100, precision: 0.01 });
-  const nilaiUAS = faker.datatype.number({ max: 100, precision: 0.01 });
+  const randomIdx = faker.unique(faker.datatype.number, [{ min: 0, max: 7 }]);
+  const namaMk = subjectList[randomIdx];
+
+  console.log(randomIdx);
+  const nilaiTugas = faker.datatype.number({
+    max: 100,
+    precision: 5,
+  });
+  const nilaiQuiz = faker.datatype.number({
+    max: 100,
+    precision: 5,
+  });
+  const nilaiUTS = faker.datatype.number({
+    min: 60,
+    max: 100,
+    precision: 5,
+  });
+  const nilaiUAS = faker.datatype.number({
+    min: 70,
+    max: 100,
+    precision: 5,
+  });
 
   return {
-    name: faker.commerce.product(),
+    name: namaMk,
     nilaiTugas,
     nilaiQuiz,
     nilaiUTS,

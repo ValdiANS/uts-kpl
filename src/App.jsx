@@ -58,6 +58,11 @@ const App = () => {
               <About />
 
               <Chart data={chartData} />
+
+              <i className="text-sm">
+                Disclaimer: data yang digunakan hanyalah data dummy yang
+                digenerate secara random
+              </i>
             </div>
 
             <div className="flex flex-col gap-y-4 w-full">
