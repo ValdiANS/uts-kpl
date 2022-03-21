@@ -11,7 +11,7 @@ const StudentList = () => {
   // console.log(studentsData);
 
   return (
-    <div className="card-container grid grid-cols-2 gap-2 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="card-container grid grid-cols-1 gap-y-4 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {studentsData.map((item, index) => (
         <StudentCard
           studentData={item.getDataMahasiswa()}
