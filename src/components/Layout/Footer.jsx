@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 
 const Footer = () => {
   const content = (
-    <p className="text-lg text-center">
+    <p className="text-base text-center">
       Created by{' '}
       <strong>
         <u>Rivaldi</u>
