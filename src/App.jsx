@@ -1,8 +1,9 @@
-import { useState, Fragment } from 'react';
+import { useState } from 'react';
 
 import { DataContextProvider } from './script/store/data-context';
-import Footer from './components/Layout/Footer';
 import Header from './components/Layout/Header';
+import Footer from './components/Layout/Footer';
+import GradeCategory from './components/Layout/GradeCategory';
 import Chart from './components/Chart/Chart';
 import About from './components/Layout/About';
 import Button from './components/UI/Button';
@@ -117,6 +118,10 @@ const App = () => {
               {activeBtn === 'addStudent' && <AddStudentForm />}
             </div>
           </div>
+        </section>
+
+        <section className="mt-6">
+          <GradeCategory />
         </section>
       </main>
 
