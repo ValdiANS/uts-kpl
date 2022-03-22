@@ -23,6 +23,8 @@ const AddStudentForm = () => {
   const ctx = useContext(DataContext);
   const studentList = ctx.dummyStudentList;
 
+  const [isAddedSuccessfully, setIsAddedSuccessfully] = useState(false);
+
   const [enteredStudentData, setEnteredStudentData] = useState({
     name: '',
     npm: '',
@@ -82,11 +84,21 @@ const AddStudentForm = () => {
         nilaiUAS: subject.nilaiUAS,
       });
 
+      setIsAddedSuccessfully(true);
+      setTimeout(() => {
+        setIsAddedSuccessfully(false);
+      }, 2000);
+
       resetHandler();
       return;
     }
 
     ctx.addStudent(newStudentData);
+
+    setIsAddedSuccessfully(true);
+    setTimeout(() => {
+      setIsAddedSuccessfully(false);
+    }, 2000);
 
     resetHandler();
   };
@@ -288,13 +300,25 @@ const AddStudentForm = () => {
           </div>
         </div>
 
-        <div className="btn-container flex flex-row gap-x-4 self-end mt-4">
-          <Button type="reset" className="px-8 py-2">
-            Reset
-          </Button>
-          <Button type="submit" className="px-8 py-2">
-            Submit
-          </Button>
+        <div
+          className={`flex flex-col-reverse justify-between items-end gap-4 sm:flex-row md:flex-col-reverse ${
+            isAddedSuccessfully ? 'lg:flex-row' : 'lg:flex-col'
+          }`}
+        >
+          {isAddedSuccessfully && (
+            <Card className="px-8 py-2 h-full bg-success text-white self-center sm:self-end md:self-center">
+              Data berhasil ditambahkan.
+            </Card>
+          )}
+
+          <div className="btn-container flex flex-row gap-x-4 self-end mt-4">
+            <Button type="reset" className="px-8 py-2">
+              Reset
+            </Button>
+            <Button type="submit" className="px-8 py-2">
+              Submit
+            </Button>
+          </div>
         </div>
       </form>
     </Card>
