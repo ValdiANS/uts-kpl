@@ -22,6 +22,8 @@ const checkIsStudentExist = (studentName, studentList) => {
 const AddStudentForm = () => {
   const ctx = useContext(DataContext);
   const studentList = ctx.dummyStudentList;
+  const [isExistingStudentEntered, setIsExistingStudentEntered] =
+    useState(false);
 
   const [isAddedSuccessfully, setIsAddedSuccessfully] = useState(false);
 
@@ -158,7 +160,9 @@ const AddStudentForm = () => {
       studentList
     );
 
-    if (!isStudentExist) {
+    if (!isStudentExist && isExistingStudentEntered) {
+      setIsExistingStudentEntered(false);
+
       setEnteredStudentData((prevValue) => ({
         ...prevValue,
         npm: '',
@@ -167,6 +171,13 @@ const AddStudentForm = () => {
       setIsNpmDisabled(false);
       return;
     }
+
+    if (!isStudentExist && !isExistingStudentEntered) {
+      setIsNpmDisabled(false);
+      return;
+    }
+
+    setIsExistingStudentEntered(true);
 
     setEnteredStudentData((prevValue) => ({
       ...prevValue,
