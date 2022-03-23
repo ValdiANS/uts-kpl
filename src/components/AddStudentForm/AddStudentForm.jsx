@@ -213,8 +213,9 @@ const AddStudentForm = () => {
           <div className="col-start-1 col-end-3 sm:col-auto flex flex-col">
             <label htmlFor="npm">NPM :</label>
             <input
-              type="text"
+              type="number"
               id="npm"
+              min="0"
               value={enteredStudentData.npm}
               onChange={npmChangeHandler}
               className="border border-solid border-black py-1 p-2"
