@@ -24,7 +24,7 @@ class Mahasiswa {
   }
 
   getNPM() {
-    return this._npm;
+    return `${this._npm}`;
   }
 
   getNama() {
