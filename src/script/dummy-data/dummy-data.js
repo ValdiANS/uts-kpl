@@ -55,7 +55,7 @@ for (let i = 0; i < totalData; i++) {
 
   const data = {
     name: faker.name.findName(),
-    npm: `${faker.datatype.number({ min: 1000000, max: 9999999 })}`,
+    npm: faker.datatype.number({ min: 1000000, max: 9999999 }),
     subjects: [subjectData1, subjectData2],
   };
 
