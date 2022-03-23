@@ -10,8 +10,6 @@ import Button from './components/UI/Button';
 import AddStudentForm from './components/AddStudentForm/AddStudentForm';
 import StudentList from './components/Student/StudentList';
 
-import { dummyStudentList } from './script/dummy-data/dummy-data';
-
 const chartData = {
   labels: ['Tugas: 15%', 'Quiz: 20%', 'UTS: 30%', 'UAS: 35%'],
   datasets: [
@@ -30,8 +28,6 @@ const chartData = {
 };
 
 const App = () => {
-  const [dummyStudents, setDummyStudents] = useState(dummyStudentList);
-
   const [activeBtn, setActiveBtn] = useState('showStudent');
   const showStudent = activeBtn === 'showStudent';
   const addStudent = activeBtn === 'addStudent';
