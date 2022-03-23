@@ -20,7 +20,7 @@ const createSubjectData = () => {
   const randomIdx = faker.unique(faker.datatype.number, [{ min: 0, max: 7 }]);
   const namaMk = subjectList[randomIdx];
 
-  console.log(randomIdx);
+  // console.log(randomIdx);
   const nilaiTugas = faker.datatype.number({
     max: 100,
     precision: 5,
