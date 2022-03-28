@@ -65,7 +65,7 @@ const StudentCard = ({ studentData }) => {
         <select
           name="subject"
           id="selectedSubject"
-          className="font-medium text-ellipsis overflow-hidden bg-none"
+          className="font-medium text-ellipsis overflow-hidden bg-none cursor-pointer"
           value={selectedSubject}
           title={selectedSubject}
           onChange={subjectOnChangeHandler}
